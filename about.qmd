@@ -1,0 +1,19 @@
+---
+title: "About"
+image: profile.jpg
+about:
+  template: jolla
+  links:
+    - icon: linkedin
+      text: LinkedIn
+      href: https://www.linkedin.com/in/rahul-satoskar-99222ba3/
+    - icon: github
+      text: Github
+      href: https://github.com/rahulsatoskar
+    - icon: github
+      text: Github Repository Link
+      href: https://github.com/rahulsatoskar/CS-5805-Machine-Learning-Blogs
+      
+---
+
+Rahul Satoskar

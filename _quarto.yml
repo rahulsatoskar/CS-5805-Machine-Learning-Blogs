@@ -1,0 +1,26 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "CS-5805-Machine-Learning-Blogs"
+  navbar:
+    right:
+      - href: index.qmd
+        text: Home
+      - about.qmd
+      - icon: github
+        href: https://github.com/rahulsatoskar
+      - icon: github
+        href: https://github.com/rahulsatoskar/CS-5805-Machine-Learning-Blogs
+      - text: "Link to Github Repository"
+
+format:
+  html:
+    theme:
+      light: litera
+      dark: darkly
+    css: styles.css
+    highlight-style: espresso
+
+editor: visual
