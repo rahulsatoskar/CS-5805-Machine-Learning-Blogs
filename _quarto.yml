@@ -1,9 +1,11 @@
 project:
   type: website
   output-dir: docs
-
+  
 website:
   title: "CS-5805-Machine-Learning-Blogs"
+  repo-url: https://github.com/rahulsatoskar/CS-5805-Machine-Learning-Blogs.git
+  repo-actions: [source]
   navbar:
     right:
       - href: index.qmd
@@ -12,7 +14,7 @@ website:
       - icon: github
         href: https://github.com/rahulsatoskar
       - icon: github
-        href: https://github.com/rahulsatoskar/CS-5805-Machine-Learning-Blogs
+        href: https://github.com/rahulsatoskar/CS-5805-Machine-Learning-Blogs.git
       - text: "Link to Github Repository"
 
 format:
@@ -22,5 +24,5 @@ format:
       dark: darkly
     css: styles.css
     highlight-style: espresso
-
+    code-tools: true
 editor: visual

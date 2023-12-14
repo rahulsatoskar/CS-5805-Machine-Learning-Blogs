@@ -12,7 +12,7 @@ about:
       href: https://github.com/rahulsatoskar
     - icon: github
       text: Github Repository Link
-      href: https://github.com/rahulsatoskar/CS-5805-Machine-Learning-Blogs
+      href: https://github.com/rahulsatoskar/CS-5805-Machine-Learning-Blogs.git
       
 ---
 
