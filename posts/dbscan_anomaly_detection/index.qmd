@@ -1,0 +1,67 @@
+---
+title: "Anomaly Detection using DBSCAN"
+author: "Rahul Satoskar"
+date: "2023-12-01"
+categories: [Anomaly/outlier detection]
+image: "outliers1.jpg"
+---
+
+In this blog we will talk about anomaly detection using DBSCAN algorithm.
+
+# DBSCAN
+
+DBSCAN (Density-Based Spatial Clustering of Applications with Noise) is a Density-Based clustering algorithm. In density based clustering dense region of points form clusters and the remaining low density points forms the outlier points.
+
+## DBSCAN terms
+
+**1- Density at point p**- The number of points within a circle of radius Eps.
+
+**2- Dense Region**- A circle of radius Eps which contains atleast MinPts points.
+
+**3- Core Points**- A point is a core point if it has more than MinPts within Eps radius around it.
+
+**4- Border point**- A point is a border point if it has fewer than MinPts within Eps radius around it but is in the neighborhood of a core point.
+
+**5- Noise point**- A noise point is a point which is neither a core point or a border point
+
+In this blog we will find these noise points or outliers using the DBSCSAN algorithm.
+
+# Anomaly detection steps using DBSCAN
+
+Let us start with importing all the required python libraries as shown below.
+
+{{< embed anomaly_detection_dbscan_final.ipynb#library_import echo=true >}}
+
+Let us now generate and visualize a random data set consisting of isotropic Gaussian blobs for clustering by using the make_blob() function as shown below.
+
+{{< embed anomaly_detection_dbscan_final.ipynb#random_data echo=true >}}
+
+Next we will fit the DBSCAN model with our input data X and make predictions on it. The argument 'eps' is the maximum distance between two samples for one to be considered as in the neighborhood of the other \[1\]. The argument 'min_samples' is the number of samples in a neighborhood for a point to be considered as a core point including the point itself \[1\].
+
+{{< embed anomaly_detection_dbscan_final.ipynb#dbscan echo=true >}}
+
+Next we fnd the index of the outlier points as shown below.
+
+{{< embed anomaly_detection_dbscan_final.ipynb#outliers_index echo=true >}}
+
+Next we display the outlier points as shown below.
+
+{{< embed anomaly_detection_dbscan_final.ipynb#outliers_points echo=true >}}
+
+Finally we plot our randomly generated data and mark our outlier points as red as shown below.
+
+{{< embed anomaly_detection_dbscan_final.ipynb#outliers_visualization echo=true >}}
+
+# Conclusion
+
+In this blog we have learnt how to detect outliers in the data set using DBSCAN algorithm. There are other outlier detection algorithms too like Local Outlier Factor (LOF), Isolation Forest etc which we will cover in future blog posts.
+
+# Python notebook code link in the Github repository
+
+<https://github.com/rahulsatoskar/CS-5805-Machine-Learning-Blogs/blob/main/Python%20notebooks/anomaly_detection_dbscan_final.ipynb>
+
+# References
+
+1- <https://scikit-learn.org/stable/modules/generated/sklearn.cluster.DBSCAN.html>
+
+2- <https://scikit-learn.org/stable/modules/generated/sklearn.datasets.make_blobs.html>

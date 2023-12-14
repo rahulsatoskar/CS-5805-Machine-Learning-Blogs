@@ -1,0 +1,101 @@
+---
+title: "Assumptions in Linear Regression"
+author: "Rahul Satoskar"
+date: "2023-11-29"
+categories: [Probability theory and random variables, Linear regression]
+image: "normal.png"
+---
+
+In this blog we will talk about the assumptions of simple linear regression. There are 4 assumptions of simple linear regression they are:
+
+1- **Linear Relationship between the input and output**
+
+2- **No Multicollinearity**
+
+3- **Normality of Residual**
+
+4- **Homoscedasticity**
+
+We will check the assumptions of simple linear regression using the California housing Data set. Let us download the dataset as shown below.
+
+{{< embed linear_regression_assumptions_Final.ipynb#california-housing echo=true >}}
+
+Let us now split the data into input features and target variables and shown below.
+
+{{< embed linear_regression_assumptions_Final.ipynb#feature_target_split echo=true >}}
+
+Let us now split the data into training and test data sets.
+
+{{< embed linear_regression_assumptions_Final.ipynb#feature_train__test_split echo=true >}}
+
+Let us now train a linear regression model on our training data set as shown below.
+
+{{< embed linear_regression_assumptions_Final.ipynb#LR echo=true >}}
+
+Let us now find residuals which are the difference between the actual target value and the target value predicted by the linear regression model.
+
+{{< embed linear_regression_assumptions_Final.ipynb#Residuals echo=true >}}
+
+# 1- To check Linear relationship between input and output variables
+
+We plot scatter plots between each of the input features and the target variable to check for linearity as shown below.
+
+{{< embed linear_regression_assumptions_Final.ipynb#Linear_relationship echo=true >}}
+
+**Observations- From the above plots we can see that none of the input features have a strong linear relationship with the target variable. The feature MedInc does have some linear relationship with the target variable but not a strong linear relationship.**
+
+**We can make transformations to the input features like log transformation,power transformation etc so that we meet this assumption.**
+
+# 2- Multicollinearity check
+
+**Variance Inflation Factor (VIF)**
+
+There are several ways to detect multicollinearity in a dataset. One such technique is called the Variance Inflation Factor (VIF).
+
+VIF determines the strength of the correlation between the independent variables or the input features. VIF is predicted by taking a variable and regressing it against every other variable.
+
+VIF score of an independent variable represents how well the variable is explained by other independent variables. VIF has the following properties:
+
+a- VIF can takes from 1 and has no upper limit.
+
+b- If VIF = 1 there is no correlation between the independent variable and the other variables.
+
+c- VIF exceeding 5 or 10 indicates high multicollinearity between the independent variable and the other independent variables.
+
+Let us check the VIF score of our independent variables as shown below:
+
+{{< embed linear_regression_assumptions_Final.ipynb#VIF echo=true >}}
+
+**Observations- We can see that the features AveRooms, AveBedrms, Latitude and Longitude have a high VIF value and hence they can be predicted by other independent variables in the dataset. Hence multicollinearity exists in our dataset.**
+
+# 3- Checking normality of residuals
+
+Let us check if our residuals follow a normal distribution.
+
+{{< embed linear_regression_assumptions_Final.ipynb#residuals_normality echo=true >}}
+
+**Observations- From the above plot we can see that the residuals are approximately normally distributed and the assumption of normality of residuals holds.**
+
+Let us now check the normality of residuals using a QQ plot.
+
+{{< embed linear_regression_assumptions_Final.ipynb#QQ_Plot echo=true >}}
+
+**Observations- The normal quantile plot is obtained by plotting the residuals against theoretical quantiles of the standard normal distribution. From the above plot we can see that the residuals are close to the 45 degrees line and hence the residuals can be considered to be from normal distribution.**
+
+# 4- Homoscedasticity (Equal variances): Residuals have constant variance across the values of the dependent variables.
+
+Let us check the assumption of homoscedasticity as shown below
+
+{{< embed linear_regression_assumptions_Final.ipynb#Homoscedasticity echo=true >}}
+
+**Observations- To check Homoscedasticity we plot residuals against predicted values. If we see a haphazard cloud of points our homoscedasticity assumption is met else if we see patterns it suggests non-linearity and/or heteroscedasticity (unequal variances).**
+
+**From the above plot we can see that our Homoscedasticity assumption of linear regression has not met and we have heteroscedasticity (unequal variances).**
+
+# 5- Conclusion
+
+In this blog we checked the assumptions of simple linear regression on a California housing dataset.
+
+# 6- Python notebook code link in the Github repository
+
+<https://github.com/rahulsatoskar/CS-5805-Machine-Learning-Blogs/blob/main/Python%20notebooks/linear_regression_assumptions_Final.ipynb>

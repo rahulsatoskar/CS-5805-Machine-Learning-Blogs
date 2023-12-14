@@ -1,0 +1,71 @@
+---
+title: "Linear and Non Linear Regression"
+author: "Rahul Satoskar"
+date: "2023-12-04"
+categories: [Linear regression, Non linear regression]
+image: "nonlinear.jpg"
+---
+
+In this blog we will talk about Linear and Non Linear Regression. We will plot graphs to show for which data is linear regression suitable and for which data is non linear regression suitable.
+
+# Linear regression
+
+Linear regression is a machine learning model which models the relationship between a dependent variable and one or more independent variables. Linear regression assumes that the relationship between the dependent variable and independent variables is linear and it can be represented by a straight line. Linear regression is represented by the equation as shown below:
+
+y = a~0~ + a~1~x~1~ + a~2~x~2~ + ... + a~n~x~n~ + Error term
+
+where y is the dependent variable and a~0~, a~1~ etc are the coefficients. These coefficients are estimated from the data using methods such as ordinary least squares which minimizes the sum of squared errors. The error term is not explained by the linear model and it represents the random variation.
+
+Linear regression is suitable for capturing relationships in the data if the data is linear. It is not suitable for non linear or complex data.
+
+Linear regression is sensitive to outliers and it can distort the results of the trained linear regression fitted line.
+
+# Non linear regression
+
+In non linear regression a dependent variable is a non linear combination of one or more independent variables. Non linear regression can fit complex curves which are not linear in nature like for example quadratic curves or polynomials with higher degrees. While linear regression models have a unique solution non linear regression models can have multiple local minima.
+
+# Fitting linear regression on different kinds of data
+
+Let us first import python libraries as shown below.
+
+{{< embed linear_non_linear_regression_final.ipynb#library_import echo=true >}}
+
+Next we generate a random data with some Gaussian noise which has a linear relationship and fit a linear regression model to it. The fitted linear regression line is as shown below which shows that linear regression is doing a good job on this data.
+
+{{< embed linear_non_linear_regression_final.ipynb#LR echo=true >}}
+
+Next we plot the fitted linear regression line as shown below where the randomly generated data has more noise and we can see that linear regression does not do a good job in this case.
+
+{{< embed linear_non_linear_regression_final.ipynb#LR1 echo=true >}}
+
+Next we plot the fitted linear regression line as shown below where the randomly generated data has less noise and we can see that linear regression does an excellent job in this case.
+
+{{< embed linear_non_linear_regression_final.ipynb#LR2 echo=true >}}
+
+Next we plot a linear regression line with quadratic data as shown below. As we can see the line does not do a good job in fitting a quadratic curve amd hence a linear model like linear regression is not good for fitting such a quadratic data.
+
+This is why we want to have polynomial regression to fit such a data. For example quadratic regression would be able to fit such a quadratic data.
+
+For such a non linear data like the quadratic data as shown above we use polynomial features where we take the features which we have and we create polynomial features based on those features.
+
+{{< embed linear_non_linear_regression_final.ipynb#LR3 echo=true >}}
+
+Next we use PolynomialFeatures function of sklearn to generate quadratic features to train a linear regression model to make predictions on quadratic data as shown below.
+
+{{< embed linear_non_linear_regression_final.ipynb#LR4 echo=true >}}
+
+Now we can see we have a quadratic function to fit these points and quadratic linear regression does a better job than linear regression.
+
+Next we use PolynomialFeatures function of sklearn to generate degree 4 features to train linear regression on a complex data set as shown below.
+
+{{< embed linear_non_linear_regression_final.ipynb#LR5 echo=true >}}
+
+We can observe after generating degree 4 polynomial features linear regression has fitted our complex function relativey well.
+
+# Conlusion-
+
+In this blog we have learnt about linear and non linear regression particularly polynomial regression and its use with different kinds of data.
+
+# Python notebook code link in the Github repository
+
+<https://github.com/rahulsatoskar/CS-5805-Machine-Learning-Blogs/blob/main/Python%20notebooks/linear_non_linear_regression_final.ipynb>
