@@ -1,0 +1,17 @@
+[
+  {
+    "listing": "/index.html",
+    "items": [
+      "/posts/dbscan_anomaly_detection/anomaly_detection_dbscan_final.html",
+      "/posts/iris_classification/iris_classification_final.html",
+      "/posts/iris_clustering/iris_clustering.html",
+      "/posts/linear and non linear regression/linear_non_linear_regression_final.html",
+      "/posts/Linear-regression-assumptions/linear_regression_assumptions_Final.html",
+      "/posts/linear and non linear regression/index.html",
+      "/posts/iris_clustering/index.html",
+      "/posts/iris_classification/index.html",
+      "/posts/dbscan_anomaly_detection/index.html",
+      "/posts/Linear-regression-assumptions/index.html"
+    ]
+  }
+]
